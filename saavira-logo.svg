@@ -1,0 +1,21 @@
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Saavira logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#8a2130"/>
+      <stop offset="1" stop-color="#6e1723"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#e7c27a"/>
+      <stop offset="1" stop-color="#d4a24c"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(8,6)">
+    <path d="M28 15c-4.5-5.5-3.6-11 0-15 3.6 4 4.5 9.5 0 15z" fill="url(#g2)"/>
+    <path d="M17 20c-5.5-3.5-7-8.5-6-12.5 3.5 1.2 7.8 5 8.8 10.8L17 20z" fill="url(#g2)"/>
+    <path d="M39 20c5.5-3.5 7-8.5 6-12.5-3.5 1.2-7.8 5-8.8 10.8L39 20z" fill="url(#g2)"/>
+    <path d="M16 23c7 5 20 5 27 0-9-2-18-2-27 0z" fill="#e7c27a"/>
+  </g>
+  <g transform="translate(64,8)">
+    <text x="0" y="32" font-family="'Playfair Display', Georgia, serif" font-size="32" fill="url(#g1)" letter-spacing="0.5">Saavira</text>
+  </g>
+</svg>

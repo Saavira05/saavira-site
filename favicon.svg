@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+  <g transform="translate(8,10)">
+    <path d="M24 14c-4-4.5-3.3-9 0-12 3.3 3.2 4 7.5 0 12z" fill="#d4a24c"/>
+    <path d="M14 18c-4.5-2.8-5.7-6.8-4.9-10 2.8 1 6.3 4 7.1 8.6L14 18z" fill="#d4a24c"/>
+    <path d="M34 18c4.5-2.8 5.7-6.8 4.9-10-2.8 1-6.3 4-7.1 8.6L34 18z" fill="#d4a24c"/>
+    <path d="M13 20c6 4 17 4 23 0-7.5-1.6-15.5-1.6-23 0z" fill="#e7c27a"/>
+  </g>
+  <text x="32" y="54" font-family="Georgia,serif" font-size="12" text-anchor="middle" fill="#8a2130">S</text>
+</svg>
