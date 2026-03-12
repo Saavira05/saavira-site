@@ -1,17 +1,14 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+// Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
-const menu = document.getElementById('nav-menu');
-if(toggle){
+const menu = document.querySelector('#nav-menu');
+
+if (toggle && menu) {
   toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    menu.classList.toggle('show');
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
   });
 }
-// Smooth internal nav
-for(const a of document.querySelectorAll('a[href^="#"]')){
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); menu && menu.classList.remove('show'); toggle && toggle.setAttribute('aria-expanded','false'); }
-  })
-}
+
+// Footer year
+const y = document.querySelector('#year');
+if (y) y.textContent = String(new Date().getFullYear());
