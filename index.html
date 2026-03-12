@@ -1,66 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Saavira — Your Everyday Style</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saavira</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" CSS INLINE: guaranteed to load -->
   <style>
-    /* =======================
-       Saavira — Base Styles
-    ======================= */
-    :root{
-      --header:62px;
-      --primary:#7a163b;
-      --accent:#caa75a;
-      --border:#e5e7eb;
-      --muted:#6b7280;
-      --surface:#fafafa;
-      --shadow:0 8px 20px rgba(0,0,0,.06);
-      --max:920px;
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:#fff; color:#1a1a1a; line-height:1.6;
+    h1, h2 {
+      color: #7a163b;
+      font-family: Georgia, serif;
     }
-    h1,h2,h3{font-family:"Playfair Display",serif; margin:0 0 .5rem}
-    h1{margin-bottom:.4rem}
-    h2{margin-bottom:.5rem}
-    h3{margin-bottom:.35rem}
-    p{margin:.5rem 0}
-    a{color:var(--primary); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{width:min(var(--max),92%); margin:auto}
+    a { color: #7a163b; }
+  </style>
 
-    /* Header / Nav */
-    .site-header{
-      position:sticky; top:0; z-index:20;
-      height:var(--header); background:#fff; border-bottom:1px solid var(--border);
-    }
-    .header-inner{
-      height:var(--header);
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
-    }
-    .brand{display:flex; align-items:center; gap:.6rem}
-    .brand-title{font-weight:700; color:#333}
+</head>
+<body>
 
-    nav ul{list-style:none; display:flex; gap:1rem; margin:0; padding:0}
-    nav a{padding:.45rem .75rem; border-radius:.4rem; position:relative}
-    nav a::after{
-      content:""; position:absolute; left:.75rem; right:.75rem; bottom:.35rem;
-      height:2px; background:transparent; transition:background .2s ease;
-    }
-    nav a:hover::after{ background: var(--primary); }
+  <h1>Saavira — Your Everyday Style</h1>
 
-    /* Hero */
-    .hero{
-      padding:1.8rem 0;
-      background:linear-gradient(135deg,#fff7fb,#fff);
-      border-bottom:1px solid var(--border);
-    }
-    .hero p{color:var(--muted)}
-    .cta-group{display:flex; gap:.8rem; margin-top:1rem}
+  <h2>About</h2>
+  <p>Fashion should be effortless, comfortable and elegant.</p>
+
+  <h2>Products</h2>
+  <ul>
+    <li>Noor — Coming soon</li>
+    <li>Pankhuri — Coming soon</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Email: Saarvia.YourEverydayStyle@gmail.com</p>
+  <p>WhatsApp: +91 8980962864</p>
+
+</body>
+</html>
