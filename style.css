@@ -83,3 +83,5 @@ nav a::after{
   height:2px; background: transparent; transition: background .2s ease;
 }
 nav a:hover::after{ background: var(--primary); }
+/* DEBUG — remove after testing */
+.section { outline: 3px dashed #f0b; background: #fffafc; }
