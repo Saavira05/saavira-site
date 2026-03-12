@@ -55,3 +55,22 @@ nav a{padding:.45rem .75rem;border-radius:.4rem}
 .site-footer{border-top:1px solid var(--border);background:#fff;padding:1.5rem 0}
 .footer-inner{display:flex;justify-content:space-between;gap:1rem}
 .foot-links{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+/* --- Spacing polish --- */
+.section { padding: 2.25rem 0; }                 /* was 3rem */
+.section.alt { padding: 2rem 0; }
+.hero { padding: 2.25rem 0; }                    /* tighten hero */
+
+.footer-inner { padding: 0.75rem 0; }            /* reduce footer height */
+.site-footer { padding: 1rem 0; }                /* slightly smaller footer */
+/* --- Container width: make content feel tighter --- */
+:root { --max: 980px; }                          /* was 1100px */
+``
+/* --- Card and section cosmetics --- */
+.card { padding: 0.9rem; box-shadow: 0 6px 16px rgba(0,0,0,.05); }
+.section + .section { border-top: 1px solid var(--border); }  /* soft divider between sections */
+/* --- Headings & lists --- */
+h1 { margin-bottom: .6rem; }
+h2 { margin-top: 0; margin-bottom: .6rem; }
+h3 { margin-bottom: .35rem; }
+
+ul { margin: .5rem 0 0 .9rem; }
