@@ -6,116 +6,61 @@
   <title>Saavira — Your Everyday Style</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display= ONE stylesheet only (v=5 cache-bust) -->
-  <link rel="stylesheet" href="style.css?v=5ss="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/saavira-site/ad a logo later, put <img src="saavira-logo.svg" alt="Saavira" classand-title">Saavira</span>
-    </a>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" CSS INLINE: guaranteed to load -->
+  <style>
+    /* =======================
+       Saavira — Base Styles
+    ======================= */
+    :root{
+      --header:62px;
+      --primary:#7a163b;
+      --accent:#caa75a;
+      --border:#e5e7eb;
+      --muted:#6b7280;
+      --surface:#fafafa;
+      --shadow:0 8px 20px rgba(0,0,0,.06);
+      --max:920px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:#fff; color:#1a1a1a; line-height:1.6;
+    }
+    h1,h2,h3{font-family:"Playfair Display",serif; margin:0 0 .5rem}
+    h1{margin-bottom:.4rem}
+    h2{margin-bottom:.5rem}
+    h3{margin-bottom:.35rem}
+    p{margin:.5rem 0}
+    a{color:var(--primary); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(var(--max),92%); margin:auto}
 
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="/ite/Home</a></li>
-        <li>#aboutAbout</a></li>
-        <li>#productsProducts</a></li>
-        <li><a href="#collectionsns</a></li>
-        <li><a hreftContact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    /* Header / Nav */
+    .site-header{
+      position:sticky; top:0; z-index:20;
+      height:var(--header); background:#fff; border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      height:var(--header);
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    }
+    .brand{display:flex; align-items:center; gap:.6rem}
+    .brand-title{font-weight:700; color:#333}
 
-<main>
+    nav ul{list-style:none; display:flex; gap:1rem; margin:0; padding:0}
+    nav a{padding:.45rem .75rem; border-radius:.4rem; position:relative}
+    nav a::after{
+      content:""; position:absolute; left:.75rem; right:.75rem; bottom:.35rem;
+      height:2px; background:transparent; transition:background .2s ease;
+    }
+    nav a:hover::after{ background: var(--primary); }
 
-<section class="hero">
-  <div class="container">
-    <h1>Your Everyday Style</h1>
-    <p>Effortless, comfortable and elegant — kurtis and dresses designed to feel beautiful every day.</p>
-
-    <div class="cta-group">
-      <a class="btn btn-primary/a>
-      <a class="btn btn-ghost" hrefns</a>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <div class="container grid two">
-    <div>
-      <h2>About Saavira</h2>
-      <p>Saavira — Your Everyday Style</p>
-      <p>Fashion should feel effortless, comfortable, and beautifully wearable every day.</p>
-      <p>We design timeless kurtis for women who want confidence wrapped in comfort.</p>
-    </div>
-
-    <div>
-      <div class="card fabric">
-        <h3>Design Philosophy</h3>
-        <ul class="checks">
-          <li>Elegance lives in the details.</li>
-          <li>Subtle beauty and effortless style.</li>
-          <li>Comfortable fabrics & soothing palettes.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="products" class="section alt">
-  <div class="container">
-    <h2>Products</h2>
-
-    <div class="grid two">
-      <div class="card">
-        <h3>Kurtis</h3>
-        <ul>
-          <li>Noor — Coming soon</li>
-          <li>Pankhuri — Coming soon</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Dresses</h3>
-        <ul>
-          <li>Taaraana — Coming soon</li>
-          <li>Mehal — Coming soon</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="collections" class="section">
-  <div class="container">
-    <h2>Collections</h2>
-    <p>Beautiful collections coming soon…</p>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Email: Saavira.YourEverydayStyle@gmail.com</p>
-    <p>WhatsApp: +91 8980962864</p>
-    <p>Instagram: @saavira_official</p>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> Saavira</p>
-    <ul class="foot-links">
-      <li><a href.htmlPrivacy</a></li>
-      <li><a href="shipping.htmlPolicy</a></li>
-    </ul>
-  </div>
-</footer>
-
-<!-- Small JS -->
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+    /* Hero */
+    .hero{
+      padding:1.8rem 0;
+      background:linear-gradient(135deg,#fff7fb,#fff);
+      border-bottom:1px solid var(--border);
+    }
+    .hero p{color:var(--muted)}
+    .cta-group{display:flex; gap:.8rem; margin-top:1rem}
