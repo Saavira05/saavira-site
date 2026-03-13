@@ -198,10 +198,14 @@ margin:0 10px;
 </div>
 
 <div class="menu">
+
 <a href="#collection">Collections</a>
 <a href="#about">About</a>
 <a href="#instagram">Instagram</a>
 <a href="#contact">Contact</a>
+
+<button onclick="openCart()">🛒 Cart</button>
+
 </div>
 
 </nav>
@@ -310,6 +314,17 @@ Inspired by heritage and everyday moments, Saavira blends tradition with modern 
 </section>
 
 
+  <div id="cartBox" style="display:none; position:fixed; right:20px; top:80px; background:white; padding:20px; box-shadow:0 10px 20px rgba(0,0,0,0.2); width:300px;">
+
+<h3>Your Cart</h3>
+
+<ul id="cartItems"></ul>
+
+<p id="totalPrice"></p>
+
+<button onclick="checkout()">Checkout</button>
+
+</div>
 <footer>
 
 <p>© 2026 Saavira – Your Everyday Style</p>
