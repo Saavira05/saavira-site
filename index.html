@@ -29,14 +29,13 @@ justify-content:space-between;
 align-items:center;
 padding:20px 10%;
 background:white;
-position:sticky;
-top:0;
-z-index:1000;
 border-bottom:1px solid #eee;
 }
 
-.logo img{
-height:45px;
+.logo{
+font-size:26px;
+font-weight:600;
+letter-spacing:2px;
 }
 
 .menu a{
@@ -49,9 +48,8 @@ font-weight:500;
 /* HERO */
 
 .hero{
-height:80vh;
-background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-url("https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03");
+height:70vh;
+background-image:url("https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -59,83 +57,59 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-animation:fadeIn 2s ease;
 }
 
 .hero h1{
-font-size:60px;
-letter-spacing:3px;
+font-size:52px;
+letter-spacing:2px;
 }
 
 .hero p{
-margin-top:15px;
 font-size:18px;
-}
-
-@keyframes fadeIn{
-from{opacity:0}
-to{opacity:1}
+margin-top:10px;
 }
 
 /* SECTION */
 
 section{
-padding:80px 10%;
+padding:70px 10%;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:50px;
-font-size:34px;
+margin-bottom:40px;
+font-size:32px;
 }
 
-/* PRODUCT GRID */
+/* PRODUCTS */
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
 }
 
 .product-card{
 background:white;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-transition:0.4s;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:0.3s;
 }
 
 .product-card:hover{
-transform:translateY(-8px);
+transform:translateY(-5px);
 }
 
-/* IMAGE */
-
 .product-image{
-height:300px;
+height:260px;
 background:#eee;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:14px;
 color:#777;
-overflow:hidden;
 }
-
-.product-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:0.6s;
-}
-
-/* ZARA STYLE HOVER ZOOM */
-
-.product-card:hover img{
-transform:scale(1.1);
-}
-
-/* PRODUCT INFO */
 
 .product-info{
 padding:20px;
@@ -143,7 +117,7 @@ padding:20px;
 
 .product-info h3{
 font-size:18px;
-margin-bottom:10px;
+margin-bottom:8px;
 }
 
 .order-btn{
@@ -152,7 +126,7 @@ margin-top:10px;
 background:#25D366;
 color:white;
 padding:10px 16px;
-border-radius:6px;
+border-radius:5px;
 text-decoration:none;
 font-size:14px;
 }
@@ -163,40 +137,23 @@ font-size:14px;
 max-width:700px;
 margin:auto;
 text-align:center;
-line-height:1.7;
+line-height:1.6;
 }
 
-/* INSTAGRAM GRID */
+/* INSTAGRAM */
 
-.instagram-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
+.instagram{
+text-align:center;
 }
 
-.instagram-grid div{
-background:#ddd;
-height:150px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:12px;
-color:#666;
-}
-
-/* FLOATING WHATSAPP */
-
-.whatsapp-float{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
+.instagram a{
+display:inline-block;
+margin-top:20px;
+background:#E1306C;
 color:white;
-padding:15px 18px;
-border-radius:50%;
-font-size:22px;
+padding:12px 20px;
+border-radius:5px;
 text-decoration:none;
-box-shadow:0 6px 15px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
@@ -206,7 +163,7 @@ background:#111;
 color:white;
 text-align:center;
 padding:40px;
-margin-top:80px;
+margin-top:60px;
 }
 
 /* MOBILE */
@@ -222,6 +179,10 @@ flex-direction:column;
 gap:10px;
 }
 
+.menu a{
+margin:0 10px;
+}
+
 }
 
 </style>
@@ -232,9 +193,7 @@ gap:10px;
 
 <nav>
 
-<div class="logo">
-<img src="logo.png" alt="Saavira Logo">
-</div>
+<div class="logo">SAAVIRA</div>
 
 <div class="menu">
 <a href="#collection">Collections</a>
@@ -249,8 +208,8 @@ gap:10px;
 <section class="hero">
 
 <div>
-<h1>Saavira</h1>
-<p>Your Everyday Style</p>
+<h1>Your Everyday Style</h1>
+<p>Elegant. Comfortable. Timeless.</p>
 </div>
 
 </section>
@@ -263,58 +222,35 @@ gap:10px;
 <div class="products">
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
-</div>
-
+<div class="product-image">Coming Soon</div>
 <div class="product-info">
 <h3>Saavira Noor Kurti</h3>
-<a class="order-btn" href="https://wa.me/918980962864?text=I%20want%20Saavira%20Noor%20Kurti">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/918980962864?text=Hi%20I%20want%20to%20order%20Saavira%20Noor%20Kurti">Order on WhatsApp</a>
 </div>
-
 </div>
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
-</div>
-
+<div class="product-image">Coming Soon</div>
 <div class="product-info">
 <h3>Saavira Pankhuri Kurti</h3>
 <a class="order-btn" href="https://wa.me/918980962864">Order on WhatsApp</a>
 </div>
-
 </div>
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
-</div>
-
+<div class="product-image">Coming Soon</div>
 <div class="product-info">
 <h3>Saavira Prakriti Kurti</h3>
 <a class="order-btn" href="https://wa.me/918980962864">Order on WhatsApp</a>
 </div>
-
 </div>
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
-</div>
-
+<div class="product-image">Coming Soon</div>
 <div class="product-info">
 <h3>Saavira Tarang Kurti</h3>
 <a class="order-btn" href="https://wa.me/918980962864">Order on WhatsApp</a>
 </div>
-
 </div>
 
 </div>
@@ -333,7 +269,7 @@ Saavira was created with a simple idea: fashion should be effortless, comfortabl
 </p>
 
 <p>
-Inspired by heritage and everyday moments, Saavira blends tradition with modern simplicity.
+Inspired by heritage and everyday moments, Saavira blends tradition with modern simplicity to create kurtis that feel graceful and natural.
 </p>
 
 </div>
@@ -343,16 +279,13 @@ Inspired by heritage and everyday moments, Saavira blends tradition with modern 
 
 <section id="instagram">
 
-<h2 class="section-title">Instagram</h2>
+<h2 class="section-title">Follow Our Journey</h2>
 
-<div class="instagram-grid">
+<div class="instagram">
 
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
+<p>Discover new collections and styling inspiration.</p>
+
+<a href="https://www.instagram.com/saavira_official?igsh=MXp5N2I1bXJtNW13">Visit Instagram</a>
 
 </div>
 
@@ -383,10 +316,6 @@ Inspired by heritage and everyday moments, Saavira blends tradition with modern 
 <p>Shop via Website | WhatsApp | Instagram</p>
 
 </footer>
-
-
-<a class="whatsapp-float" href="https://wa.me/918980962864">💬</a>
-
 
 </body>
 </html>
