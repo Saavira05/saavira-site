@@ -1,8 +1,8 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,15 +37,20 @@ top:0;
 z-index:1000;
 }
 
+/* BIGGER LOGO */
+
 .logo img{
-height:60px;
+height:95px;
 }
+
+/* MENU */
 
 .menu a{
 margin-left:25px;
 text-decoration:none;
 color:#333;
 font-weight:500;
+font-size:16px;
 }
 
 .cart-btn{
@@ -53,31 +58,12 @@ margin-left:25px;
 background:black;
 color:white;
 border:none;
-padding:8px 14px;
+padding:10px 16px;
 cursor:pointer;
 }
 
 /* HERO */
 
-  .hero{
-
-animation:fadeHero 2s ease;
-
-}
-
-@keyframes fadeHero{
-
-0%{
-opacity:0;
-transform:scale(1.05);
-}
-
-100%{
-opacity:1;
-transform:scale(1);
-}
-
-}
 .hero{
 height:80vh;
 background-image:url("https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03");
@@ -91,7 +77,7 @@ color:white;
 }
 
 .hero img{
-width:280px;
+width:350px;
 margin-bottom:20px;
 }
 
@@ -105,7 +91,7 @@ font-size:18px;
 margin-top:10px;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
 padding:80px 10%;
@@ -175,7 +161,7 @@ padding:10px 15px;
 cursor:pointer;
 }
 
-/* CART */
+/* CART PANEL */
 
 .cart{
 position:fixed;
@@ -207,8 +193,24 @@ margin-bottom:20px;
 margin-bottom:10px;
 }
 
+/* CART BUTTONS */
+
+.cart-buttons{
+display:flex;
+gap:10px;
+}
+
 .checkout-btn{
 background:#25D366;
+color:white;
+border:none;
+padding:12px;
+width:100%;
+cursor:pointer;
+}
+
+.continue-btn{
+background:black;
 color:white;
 border:none;
 padding:12px;
@@ -266,6 +268,20 @@ padding:40px;
 margin-top:60px;
 }
 
+/* MOBILE */
+
+@media(max-width:768px){
+
+.logo img{
+height:70px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+}
+
 </style>
 </head>
 
@@ -274,21 +290,27 @@ margin-top:60px;
 <nav>
 
 <div class="logo">
+<a href="#home">
 <img src="logo.png">
+</a>
 </div>
 
 <div class="menu">
+
+<a href="#home">Home</a>
 <a href="#collection">Collections</a>
 <a href="#about">About</a>
 <a href="#instagram">Instagram</a>
 <a href="#contact">Contact</a>
+
 <button class="cart-btn" onclick="toggleCart()">Cart</button>
+
 </div>
 
 </nav>
 
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div>
 
@@ -318,13 +340,13 @@ margin-top:60px;
 <div class="product-info">
 
 <h3>Saavira Noor Kurti</h3>
-
 <p>₹1899</p>
 
-<button onclick="addToCart('Saavira Noor Kurti',1899)">Add to Cart</button>
+<button onclick="addToCart('Saavira Noor Kurti',1899)">
+Add to Cart
+</button>
 
 </div>
-
 </div>
 
 
@@ -337,33 +359,15 @@ margin-top:60px;
 <div class="product-info">
 
 <h3>Saavira Pankhuri Kurti</h3>
-
 <p>₹1799</p>
 
-<button onclick="addToCart('Saavira Pankhuri Kurti',1799)">Add to Cart</button>
+<button onclick="addToCart('Saavira Pankhuri Kurti',1799)">
+Add to Cart
+</button>
 
 </div>
-
 </div>
 
-
-<div class="product-card">
-
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
-</div>
-
-<div class="product-info">
-
-<h3>Saavira Prakriti Kurti</h3>
-
-<p>₹1999</p>
-
-<button onclick="addToCart('Saavira Prakriti Kurti',1999)">Add to Cart</button>
-
-</div>
-
-</div>
 
 </div>
 
@@ -379,11 +383,6 @@ margin-top:60px;
 <p>
 Saavira was created with a simple idea: fashion should be effortless,
 comfortable, and elegant enough to be worn every day.
-</p>
-
-<p>
-Inspired by heritage and everyday moments, Saavira blends tradition with
-modern simplicity to create timeless ethnic wear.
 </p>
 
 </div>
@@ -416,9 +415,7 @@ modern simplicity to create timeless ethnic wear.
 <div class="about">
 
 <p>Email: Saavira.YourEverydayStyle@gmail.com</p>
-
 <p>WhatsApp: +91 8980962864</p>
-
 <p>Ahmedabad, India</p>
 
 </div>
@@ -430,13 +427,13 @@ modern simplicity to create timeless ethnic wear.
 
 <p>© 2026 Saavira – Your Everyday Style</p>
 
-<p>Shop via Website | WhatsApp | Instagram</p>
-
 </footer>
 
 
 <a class="whatsapp" href="https://wa.me/918980962864">💬</a>
 
+
+<!-- CART PANEL -->
 
 <div class="cart" id="cart">
 
@@ -446,7 +443,17 @@ modern simplicity to create timeless ethnic wear.
 
 <p id="cart-total"></p>
 
-<button class="checkout-btn" onclick="checkout()">Checkout via WhatsApp</button>
+<div class="cart-buttons">
+
+<button class="continue-btn" onclick="toggleCart()">
+Continue Shopping
+</button>
+
+<button class="checkout-btn" onclick="checkout()">
+Checkout
+</button>
+
+</div>
 
 </div>
 
@@ -456,9 +463,7 @@ modern simplicity to create timeless ethnic wear.
 let cart=[];
 
 function toggleCart(){
-
 document.getElementById("cart").classList.toggle("open");
-
 }
 
 function addToCart(name,price){
@@ -466,6 +471,8 @@ function addToCart(name,price){
 cart.push({name,price});
 
 updateCart();
+
+toggleCart();
 
 }
 
