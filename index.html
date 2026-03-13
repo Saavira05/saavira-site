@@ -1,224 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Saavira – Your Everyday Style</title>
 
 <style>
 
-body{
-font-family: Arial, sans-serif;
+*{
 margin:0;
-background:#faf7f5;
-color:#333;
+padding:0;
+box-sizing:border-box;
+font-family: 'Helvetica Neue', sans-serif;
 }
 
-header{
+body{
+background:#faf8f6;
+color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
 background:white;
-padding:20px;
-text-align:center;
 border-bottom:1px solid #eee;
 }
 
-header h1{
-font-size:36px;
-margin:0;
+.logo{
+font-size:26px;
+font-weight:600;
 letter-spacing:2px;
 }
 
-header p{
-color:#777;
-font-style:italic;
-}
-
-nav{
-text-align:center;
-padding:15px;
-background:#fff;
-border-bottom:1px solid #eee;
-}
-
-nav a{
-margin:0 15px;
+.menu a{
+margin-left:25px;
 text-decoration:none;
-color:#444;
+color:#333;
 font-weight:500;
 }
 
+/* HERO */
+
+.hero{
+height:70vh;
+background-image:url("https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:52px;
+letter-spacing:2px;
+}
+
+.hero p{
+font-size:18px;
+margin-top:10px;
+}
+
+/* SECTION */
+
 section{
-padding:50px 20px;
-max-width:1000px;
-margin:auto;
+padding:70px 10%;
 }
 
-h2{
-margin-bottom:20px;
-font-size:28px;
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
 }
 
-.grid{
+/* PRODUCTS */
+
+.products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
 }
 
-.card{
+.product-card{
 background:white;
-padding:20px;
 border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,0.05);
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:0.3s;
 }
+
+.product-card:hover{
+transform:translateY(-5px);
+}
+
+.product-image{
+height:260px;
+background:#eee;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
+color:#777;
+}
+
+.product-info{
+padding:20px;
+}
+
+.product-info h3{
+font-size:18px;
+margin-bottom:8px;
+}
+
+.order-btn{
+display:inline-block;
+margin-top:10px;
+background:#25D366;
+color:white;
+padding:10px 16px;
+border-radius:5px;
+text-decoration:none;
+font-size:14px;
+}
+
+/* ABOUT */
+
+.about{
+max-width:700px;
+margin:auto;
+text-align:center;
+line-height:1.6;
+}
+
+/* INSTAGRAM */
+
+.instagram{
+text-align:center;
+}
+
+.instagram a{
+display:inline-block;
+margin-top:20px;
+background:#E1306C;
+color:white;
+padding:12px 20px;
+border-radius:5px;
+text-decoration:none;
+}
+
+/* FOOTER */
 
 footer{
 background:#111;
 color:white;
 text-align:center;
-padding:30px;
-margin-top:40px;
+padding:40px;
+margin-top:60px;
 }
 
-.contact a{
-display:block;
-margin:5px 0;
-color:#333;
-text-decoration:none;
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+.menu a{
+margin:0 10px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<header>
-<h1>Saavira</h1>
-<p>Your Everyday Style</p>
-</header>
-
 <nav>
+
+<div class="logo">SAAVIRA</div>
+
+<div class="menu">
+<a href="#collection">Collections</a>
 <a href="#about">About</a>
-<a href="#categories">Collections</a>
-<a href="#products">Products</a>
-<a href="#founder">Founder</a>
+<a href="#instagram">Instagram</a>
 <a href="#contact">Contact</a>
+</div>
+
 </nav>
 
+
+<section class="hero">
+
+<div>
+<h1>Your Everyday Style</h1>
+<p>Elegant. Comfortable. Timeless.</p>
+</div>
+
+</section>
+
+
+<section id="collection">
+
+<h2 class="section-title">Kurti Collection</h2>
+
+<div class="products">
+
+<div class="product-card">
+<div class="product-image">Coming Soon</div>
+<div class="product-info">
+<h3>Saavira Noor Kurti</h3>
+<a class="order-btn" href="https://wa.me/918980962864?text=Hi%20I%20want%20to%20order%20Saavira%20Noor%20Kurti">Order on WhatsApp</a>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-image">Coming Soon</div>
+<div class="product-info">
+<h3>Saavira Pankhuri Kurti</h3>
+<a class="order-btn" href="https://wa.me/918980962864">Order on WhatsApp</a>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-image">Coming Soon</div>
+<div class="product-info">
+<h3>Saavira Prakriti Kurti</h3>
+<a class="order-btn" href="https://wa.me/918980962864">Order on WhatsApp</a>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-image">Coming Soon</div>
+<div class="product-info">
+<h3>Saavira Tarang Kurti</h3>
+<a class="order-btn" href="https://wa.me/918980962864">Order on WhatsApp</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
 <section id="about">
-<h2>About Saavira</h2>
+
+<h2 class="section-title">About Saavira</h2>
+
+<div class="about">
 
 <p>
 Saavira was created with a simple idea: fashion should be effortless, comfortable, and elegant enough to be worn every day.
 </p>
 
 <p>
-In a world where trends change quickly, we believe in timeless style that fits naturally into everyday life. Saavira focuses on modern kurtis designed for women who want to feel confident, comfortable, and stylish at the same time.
+Inspired by heritage and everyday moments, Saavira blends tradition with modern simplicity to create kurtis that feel graceful and natural.
 </p>
-
-<p>
-Each piece is thoughtfully designed to combine simplicity, elegance, and practicality—perfect for work, casual outings, or daily wear.
-</p>
-
-</section>
-
-
-<section id="categories">
-<h2>Product Categories</h2>
-
-<div class="grid">
-
-<div class="card">Sunlit Threads – bright summer vibes</div>
-
-<div class="card">Celebration Silhouettes – festive kurtis</div>
-
-<div class="card">Golden Threads – luxurious festive wear</div>
-
-<div class="card">Desi Essence – pure ethnic everyday wear</div>
-
-<div class="card">Everyday Grace – simple and elegant</div>
-
-<div class="card">City Rhythms – office wear kurtis</div>
-
-<div class="card">Thread & Tale – each kurti tells a story</div>
 
 </div>
 
 </section>
 
 
-<section id="products">
-<h2>Collections</h2>
+<section id="instagram">
 
-<h3>Kurtis</h3>
+<h2 class="section-title">Follow Our Journey</h2>
 
-<div class="grid">
-<div class="card">Saavira Noor Kurti – Coming Soon</div>
-<div class="card">Saavira Pankhuri Kurti – Coming Soon</div>
-<div class="card">Saavira Prakriti Kurti – Coming Soon</div>
-<div class="card">Saavira Tarang Kurti – Coming Soon</div>
-<div class="card">Saavira Oorja Kurti – Coming Soon</div>
-<div class="card">Saavira Sugandha Kurti – Coming Soon</div>
-<div class="card">Saavira Sparsh Kurti – Coming Soon</div>
-<div class="card">Saavira Prerna Kurti – Coming Soon</div>
+<div class="instagram">
+
+<p>Discover new collections and styling inspiration.</p>
+
+<a href="https://www.instagram.com/saavira_official?igsh=MXp5N2I1bXJtNW13">Visit Instagram</a>
+
 </div>
-
-<h3>Dresses</h3>
-
-<div class="grid">
-<div class="card">Saavira Taaraana – Coming Soon</div>
-<div class="card">Saavira Mehal – Coming Soon</div>
-<div class="card">Saavira Rangoli – Coming Soon</div>
-<div class="card">Saavira Riwaayat – Coming Soon</div>
-</div>
-
-<h3>Accessories</h3>
-
-<div class="grid">
-<div class="card">Earrings – Coming Soon</div>
-<div class="card">Rings – Coming Soon</div>
-<div class="card">Bracelets – Coming Soon</div>
-<div class="card">Imitation Jewellery – Coming Soon</div>
-</div>
-
-</section>
-
-
-<section id="founder">
-
-<h2>About the Founder</h2>
-
-<p>
-Saavira was founded by Haard Joshi, a hotelier and aviator with a passion for creativity and thoughtful design.
-</p>
-
-<p>
-While working in the hospitality industry, he observed how many women struggled to find outfits that balanced everyday comfort with elegant style.
-</p>
-
-<p>
-Inspired by this gap, he stepped away from his career to create Saavira – Your Everyday Style, a brand dedicated to simple, graceful, and versatile ethnic wear for modern women.
-</p>
 
 </section>
 
 
 <section id="contact">
 
-<h2>Contact</h2>
+<h2 class="section-title">Contact</h2>
 
-<div class="contact">
+<div class="about">
 
-<a href="mailto:Saavira.YourEverydayStyle@gmail.com">
-Email: Saavira.YourEverydayStyle@gmail.com
-</a>
+<p>Email: Saavira.YourEverydayStyle@gmail.com</p>
 
-<a href="https://wa.me/918980962864">
-WhatsApp: +91 8980962864
-</a>
+<p>WhatsApp: +91 8980962864</p>
 
-<a href="https://www.instagram.com/saavira_official">
-Instagram: @saavira_official
-</a>
-
-<p>Location: Ahmedabad, India</p>
+<p>Ahmedabad, India</p>
 
 </div>
 
