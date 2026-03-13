@@ -1,7 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,7 +18,8 @@ font-family: 'Helvetica Neue', sans-serif;
 }
 
 body{
-background:#faf8f6;
+background-image:url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+background-color:#faf8f6;
 color:#222;
 }
 
@@ -27,15 +29,16 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
+padding:20px 8%;
 background:white;
 border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.logo{
-font-size:26px;
-font-weight:600;
-letter-spacing:2px;
+.logo img{
+height:60px;
 }
 
 .menu a{
@@ -45,10 +48,19 @@ color:#333;
 font-weight:500;
 }
 
+.cart-btn{
+margin-left:25px;
+background:black;
+color:white;
+border:none;
+padding:8px 14px;
+cursor:pointer;
+}
+
 /* HERO */
 
 .hero{
-height:70vh;
+height:80vh;
 background-image:url("https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03");
 background-size:cover;
 background-position:center;
@@ -59,9 +71,14 @@ text-align:center;
 color:white;
 }
 
+.hero img{
+width:280px;
+margin-bottom:20px;
+}
+
 .hero h1{
 font-size:52px;
-letter-spacing:2px;
+letter-spacing:3px;
 }
 
 .hero p{
@@ -69,31 +86,31 @@ font-size:18px;
 margin-top:10px;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section{
-padding:70px 10%;
+padding:80px 10%;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:40px;
-font-size:32px;
+margin-bottom:50px;
+font-size:34px;
 }
 
 /* PRODUCTS */
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
 }
 
 .product-card{
 background:white;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
 transition:0.3s;
 }
 
@@ -102,33 +119,82 @@ transform:translateY(-5px);
 }
 
 .product-image{
-height:260px;
-background:#eee;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:14px;
-color:#777;
+height:280px;
+overflow:hidden;
+}
+
+.product-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.6s;
+}
+
+.product-card:hover img{
+transform:scale(1.1);
 }
 
 .product-info{
 padding:20px;
+text-align:center;
 }
 
 .product-info h3{
-font-size:18px;
 margin-bottom:8px;
 }
 
-.order-btn{
-display:inline-block;
-margin-top:10px;
+.product-info p{
+margin-bottom:10px;
+color:#666;
+}
+
+.product-info button{
+background:black;
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+}
+
+/* CART */
+
+.cart{
+position:fixed;
+right:-350px;
+top:0;
+width:350px;
+height:100%;
+background:white;
+box-shadow:-5px 0 20px rgba(0,0,0,0.2);
+padding:20px;
+transition:0.4s;
+z-index:2000;
+}
+
+.cart.open{
+right:0;
+}
+
+.cart h2{
+margin-bottom:20px;
+}
+
+.cart ul{
+list-style:none;
+margin-bottom:20px;
+}
+
+.cart li{
+margin-bottom:10px;
+}
+
+.checkout-btn{
 background:#25D366;
 color:white;
-padding:10px 16px;
-border-radius:5px;
-text-decoration:none;
-font-size:14px;
+border:none;
+padding:12px;
+width:100%;
+cursor:pointer;
 }
 
 /* ABOUT */
@@ -137,23 +203,38 @@ font-size:14px;
 max-width:700px;
 margin:auto;
 text-align:center;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* INSTAGRAM */
 
-.instagram{
-text-align:center;
+.instagram-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
 }
 
-.instagram a{
-display:inline-block;
-margin-top:20px;
-background:#E1306C;
+.instagram-grid div{
+background:#ddd;
+height:150px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:12px;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
 color:white;
-padding:12px 20px;
-border-radius:5px;
+padding:15px;
+border-radius:50%;
 text-decoration:none;
+font-size:20px;
 }
 
 /* FOOTER */
@@ -166,27 +247,7 @@ padding:40px;
 margin-top:60px;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:36px;
-}
-
-nav{
-flex-direction:column;
-gap:10px;
-}
-
-.menu a{
-margin:0 10px;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
@@ -194,18 +255,15 @@ margin:0 10px;
 <nav>
 
 <div class="logo">
-<img src="logo.png" alt="Saavira Logo">
+<img src="logo.png">
 </div>
 
 <div class="menu">
-
 <a href="#collection">Collections</a>
 <a href="#about">About</a>
 <a href="#instagram">Instagram</a>
 <a href="#contact">Contact</a>
-
-<button onclick="openCart()">🛒 Cart</button>
-
+<button class="cart-btn" onclick="toggleCart()">Cart</button>
 </div>
 
 </nav>
@@ -214,8 +272,13 @@ margin:0 10px;
 <section class="hero">
 
 <div>
+
+<img src="logo.png">
+
 <h1>Your Everyday Style</h1>
-<p>Elegant. Comfortable. Timeless.</p>
+
+<p>Elegant • Comfortable • Timeless</p>
+
 </div>
 
 </section>
@@ -223,42 +286,67 @@ margin:0 10px;
 
 <section id="collection">
 
-<h2 class="section-title">Collections</h2>
+<h2 class="section-title">Kurti Collection</h2>
 
 <div class="products">
 
 <div class="product-card">
-<div class="product-image">Coming Soon</div>
+
+<div class="product-image">
+<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
+</div>
 
 <div class="product-info">
-<h3>Saavira Noor Kurti</h3>
-<p>₹1,899</p>
 
-<button onclick="addToCart('Saavira Noor Kurti',1899)">
-Add to Cart
-</button>
+<h3>Saavira Noor Kurti</h3>
+
+<p>₹1899</p>
+
+<button onclick="addToCart('Saavira Noor Kurti',1899)">Add to Cart</button>
 
 </div>
+
 </div>
 
 
 <div class="product-card">
-<div class="product-image">Coming Soon</div>
+
+<div class="product-image">
+<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
+</div>
 
 <div class="product-info">
+
 <h3>Saavira Pankhuri Kurti</h3>
-<p>₹1,799</p>
 
-<button onclick="addToCart('Saavira Pankhuri Kurti',1799)">
-Add to Cart
-</button>
+<p>₹1799</p>
 
-</div>
+<button onclick="addToCart('Saavira Pankhuri Kurti',1799)">Add to Cart</button>
+
 </div>
 
 </div>
 
-</section>
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
+</div>
+
+<div class="product-info">
+
+<h3>Saavira Prakriti Kurti</h3>
+
+<p>₹1999</p>
+
+<button onclick="addToCart('Saavira Prakriti Kurti',1999)">Add to Cart</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -270,11 +358,13 @@ Add to Cart
 <div class="about">
 
 <p>
-Saavira was created with a simple idea: fashion should be effortless, comfortable, and elegant enough to be worn every day.
+Saavira was created with a simple idea: fashion should be effortless,
+comfortable, and elegant enough to be worn every day.
 </p>
 
 <p>
-Inspired by heritage and everyday moments, Saavira blends tradition with modern simplicity to create kurtis that feel graceful and natural.
+Inspired by heritage and everyday moments, Saavira blends tradition with
+modern simplicity to create timeless ethnic wear.
 </p>
 
 </div>
@@ -284,13 +374,16 @@ Inspired by heritage and everyday moments, Saavira blends tradition with modern 
 
 <section id="instagram">
 
-<h2 class="section-title">Follow Our Journey</h2>
+<h2 class="section-title">Instagram</h2>
 
-<div class="instagram">
+<div class="instagram-grid">
 
-<p>Discover new collections and styling inspiration.</p>
-
-<a href="https://www.instagram.com/saavira_official?igsh=MXp5N2I1bXJtNW13">Visit Instagram</a>
+<div>Coming Soon</div>
+<div>Coming Soon</div>
+<div>Coming Soon</div>
+<div>Coming Soon</div>
+<div>Coming Soon</div>
+<div>Coming Soon</div>
 
 </div>
 
@@ -314,17 +407,6 @@ Inspired by heritage and everyday moments, Saavira blends tradition with modern 
 </section>
 
 
-  <div id="cartBox" style="display:none; position:fixed; right:20px; top:80px; background:white; padding:20px; box-shadow:0 10px 20px rgba(0,0,0,0.2); width:300px;">
-
-<h3>Your Cart</h3>
-
-<ul id="cartItems"></ul>
-
-<p id="totalPrice"></p>
-
-<button onclick="checkout()">Checkout</button>
-
-</div>
 <footer>
 
 <p>© 2026 Saavira – Your Everyday Style</p>
@@ -333,5 +415,79 @@ Inspired by heritage and everyday moments, Saavira blends tradition with modern 
 
 </footer>
 
+
+<a class="whatsapp" href="https://wa.me/918980962864">💬</a>
+
+
+<div class="cart" id="cart">
+
+<h2>Your Cart</h2>
+
+<ul id="cart-items"></ul>
+
+<p id="cart-total"></p>
+
+<button class="checkout-btn" onclick="checkout()">Checkout via WhatsApp</button>
+
+</div>
+
+
+<script>
+
+let cart=[];
+
+function toggleCart(){
+
+document.getElementById("cart").classList.toggle("open");
+
+}
+
+function addToCart(name,price){
+
+cart.push({name,price});
+
+updateCart();
+
+}
+
+function updateCart(){
+
+let items=document.getElementById("cart-items");
+
+let total=0;
+
+items.innerHTML="";
+
+cart.forEach(item=>{
+
+let li=document.createElement("li");
+
+li.textContent=item.name+" - ₹"+item.price;
+
+items.appendChild(li);
+
+total+=item.price;
+
+});
+
+document.getElementById("cart-total").textContent="Total: ₹"+total;
+
+}
+
+function checkout(){
+
+let message="Hello, I want to order:%0A";
+
+cart.forEach(item=>{
+message+=item.name+" - ₹"+item.price+"%0A";
+});
+
+window.open("https://wa.me/918980962864?text="+message);
+
+}
+
+</script>
+
 </body>
 </html>
+```
