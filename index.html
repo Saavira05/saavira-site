@@ -1,15 +1,13 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Saavira – Your Everyday Style</title>
 
 <style>
-
+/* GLOBAL */
 *{
 margin:0;
 padding:0;
@@ -24,7 +22,6 @@ color:#222;
 }
 
 /* NAVBAR */
-
 nav{
 display:flex;
 justify-content:space-between;
@@ -36,15 +33,9 @@ position:sticky;
 top:0;
 z-index:1000;
 }
-
-/* BIGGER LOGO */
-
 .logo img{
 height:95px;
 }
-
-/* MENU */
-
 .menu a{
 margin-left:25px;
 text-decoration:none;
@@ -52,7 +43,6 @@ color:#333;
 font-weight:500;
 font-size:16px;
 }
-
 .cart-btn{
 margin-left:25px;
 background:black;
@@ -63,7 +53,6 @@ cursor:pointer;
 }
 
 /* HERO */
-
 .hero{
 height:80vh;
 background-image:url("https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03");
@@ -74,43 +63,59 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+animation:fadeHero 2s ease;
 }
-
+@keyframes fadeHero{
+0%{opacity:0; transform:scale(1.05);}
+100%{opacity:1; transform:scale(1);}
+}
 .hero img{
 width:350px;
 margin-bottom:20px;
 }
-
 .hero h1{
 font-size:52px;
 letter-spacing:3px;
 }
-
 .hero p{
 font-size:18px;
 margin-top:10px;
 }
 
-/* SECTION */
-
-section{
-padding:80px 10%;
+/* COLLECTION GRID */
+.collection-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
 }
-
-.section-title{
+.collection-card{
+background:white;
+padding:60px 20px;
 text-align:center;
-margin-bottom:50px;
-font-size:34px;
+cursor:pointer;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
+transition:0.3s;
+}
+.collection-card:hover{
+transform:translateY(-6px);
+}
+.collection-card h3{
+font-size:24px;
+margin-bottom:10px;
+}
+.collection-card p{
+color:#777;
 }
 
 /* PRODUCTS */
-
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:30px;
+margin-top:40px;
 }
-
 .product-card{
 background:white;
 border-radius:10px;
@@ -118,41 +123,33 @@ overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.06);
 transition:0.3s;
 }
-
 .product-card:hover{
 transform:translateY(-5px);
 }
-
 .product-image{
 height:280px;
 overflow:hidden;
 }
-
 .product-image img{
 width:100%;
 height:100%;
 object-fit:cover;
 transition:0.6s;
 }
-
 .product-card:hover img{
 transform:scale(1.1);
 }
-
 .product-info{
 padding:20px;
 text-align:center;
 }
-
 .product-info h3{
 margin-bottom:8px;
 }
-
 .product-info p{
 margin-bottom:10px;
 color:#666;
 }
-
 .product-info button{
 background:black;
 color:white;
@@ -162,7 +159,6 @@ cursor:pointer;
 }
 
 /* CART PANEL */
-
 .cart{
 position:fixed;
 right:-350px;
@@ -175,31 +171,24 @@ padding:20px;
 transition:0.4s;
 z-index:2000;
 }
-
 .cart.open{
 right:0;
 }
-
 .cart h2{
 margin-bottom:20px;
 }
-
 .cart ul{
 list-style:none;
 margin-bottom:20px;
 }
-
 .cart li{
 margin-bottom:10px;
 }
-
-/* CART BUTTONS */
-
 .cart-buttons{
 display:flex;
 gap:10px;
+flex-direction:column;
 }
-
 .checkout-btn{
 background:#25D366;
 color:white;
@@ -208,7 +197,6 @@ padding:12px;
 width:100%;
 cursor:pointer;
 }
-
 .continue-btn{
 background:black;
 color:white;
@@ -219,7 +207,6 @@ cursor:pointer;
 }
 
 /* ABOUT */
-
 .about{
 max-width:700px;
 margin:auto;
@@ -228,13 +215,11 @@ line-height:1.7;
 }
 
 /* INSTAGRAM */
-
 .instagram-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:15px;
 }
-
 .instagram-grid div{
 background:#ddd;
 height:150px;
@@ -245,7 +230,6 @@ font-size:12px;
 }
 
 /* WHATSAPP FLOAT */
-
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -259,7 +243,6 @@ font-size:20px;
 }
 
 /* FOOTER */
-
 footer{
 background:#111;
 color:white;
@@ -269,251 +252,180 @@ margin-top:60px;
 }
 
 /* MOBILE */
-
 @media(max-width:768px){
-
-.logo img{
-height:70px;
+.logo img{height:70px;}
+.hero h1{font-size:36px;}
 }
-
-.hero h1{
-font-size:36px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <nav>
-
 <div class="logo">
-<a href="#home">
-<img src="logo.png">
-</a>
+<a href="#home"><img src="logo.png"></a>
 </div>
-
 <div class="menu">
-
 <a href="#home">Home</a>
 <a href="#collection">Collections</a>
 <a href="#about">About</a>
 <a href="#instagram">Instagram</a>
 <a href="#contact">Contact</a>
-
 <button class="cart-btn" onclick="toggleCart()">Cart</button>
-
 </div>
-
 </nav>
 
-
 <section class="hero" id="home">
-
 <div>
-
 <img src="logo.png">
-
 <h1>Your Everyday Style</h1>
-
 <p>Elegant • Comfortable • Timeless</p>
-
 </div>
-
 </section>
-
 
 <section id="collection">
-
-<h2 class="section-title">Kurti Collection</h2>
-
-<div class="products">
-
-<div class="product-card">
-
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
+<h2 class="section-title">Collections</h2>
+<div class="collection-grid">
+<div class="collection-card" onclick="showCategory('kurtis')">
+<h3>Kurtis</h3>
+<p>Cotton • Long • Short</p>
 </div>
-
-<div class="product-info">
-
-<h3>Saavira Noor Kurti</h3>
-<p>₹1899</p>
-
-<button onclick="addToCart('Saavira Noor Kurti',1899)">
-Add to Cart
-</button>
-
+<div class="collection-card" onclick="showCategory('dresses')">
+<h3>Dresses</h3>
+<p>Elegant everyday dresses</p>
+</div>
+<div class="collection-card" onclick="showCategory('accessories')">
+<h3>Accessories</h3>
+<p>Jewellery & finishing touches</p>
 </div>
 </div>
-
-
-<div class="product-card">
-
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
-</div>
-
-<div class="product-info">
-
-<h3>Saavira Pankhuri Kurti</h3>
-<p>₹1799</p>
-
-<button onclick="addToCart('Saavira Pankhuri Kurti',1799)">
-Add to Cart
-</button>
-
-</div>
-</div>
-
-
-</div>
-
 </section>
 
+<section id="products">
+<h2 class="section-title">Products</h2>
+<div class="products" id="product-container"></div>
+</section>
 
 <section id="about">
-
 <h2 class="section-title">About Saavira</h2>
-
 <div class="about">
-
-<p>
-Saavira was created with a simple idea: fashion should be effortless,
-comfortable, and elegant enough to be worn every day.
-</p>
-
+<p>Saavira was created with a simple idea: fashion should be effortless, comfortable, and elegant enough to be worn every day.</p>
+<p>Inspired by heritage and everyday moments, Saavira blends tradition with modern simplicity to create timeless ethnic wear.</p>
 </div>
-
 </section>
-
 
 <section id="instagram">
-
 <h2 class="section-title">Instagram</h2>
-
 <div class="instagram-grid">
-
 <div>Coming Soon</div>
 <div>Coming Soon</div>
 <div>Coming Soon</div>
 <div>Coming Soon</div>
 <div>Coming Soon</div>
 <div>Coming Soon</div>
-
 </div>
-
 </section>
 
-
 <section id="contact">
-
 <h2 class="section-title">Contact</h2>
-
 <div class="about">
-
 <p>Email: Saavira.YourEverydayStyle@gmail.com</p>
 <p>WhatsApp: +91 8980962864</p>
 <p>Ahmedabad, India</p>
-
 </div>
-
 </section>
 
-
 <footer>
-
 <p>© 2026 Saavira – Your Everyday Style</p>
-
 </footer>
-
 
 <a class="whatsapp" href="https://wa.me/918980962864">💬</a>
 
-
 <!-- CART PANEL -->
-
 <div class="cart" id="cart">
-
 <h2>Your Cart</h2>
-
 <ul id="cart-items"></ul>
-
 <p id="cart-total"></p>
-
 <div class="cart-buttons">
-
-<button class="continue-btn" onclick="toggleCart()">
-Continue Shopping
-</button>
-
-<button class="checkout-btn" onclick="checkout()">
-Checkout
-</button>
-
+<button class="continue-btn" onclick="toggleCart()">Continue Shopping</button>
+<button class="checkout-btn" onclick="checkout()">Checkout</button>
 </div>
-
 </div>
-
 
 <script>
+// Products Data
+const products = {
+kurtis: [
+{name:"Saavira Noor Kurti", price:1899},
+{name:"Saavira Pankhuri Kurti", price:1799},
+{name:"Saavira Prakriti Kurti", price:1999},
+{name:"Saavira Tarang Kurti", price:1899},
+{name:"Saavira Oorja Kurti", price:1999},
+{name:"Saavira Sugandha Kurti", price:1899},
+{name:"Saavira Sparsh Kurti", price:1799},
+{name:"Saavira Prerna Kurti", price:1899}
+],
+dresses: [
+{name:"Saavira Taaraana", price:2499},
+{name:"Saavira Mehal", price:2699},
+{name:"Saavira Rangoli", price:2399},
+{name:"Saavira Riwaayat", price:2599}
+],
+accessories: [
+{name:"Earrings", price:499},
+{name:"Bracelet", price:699},
+{name:"Ring", price:399},
+{name:"Imitation Jewellery Set", price:999}
+]
+};
 
+// Cart
 let cart=[];
-
-function toggleCart(){
-document.getElementById("cart").classList.toggle("open");
-}
-
+function toggleCart(){document.getElementById("cart").classList.toggle("open");}
 function addToCart(name,price){
-
 cart.push({name,price});
-
 updateCart();
-
 toggleCart();
-
 }
-
 function updateCart(){
-
 let items=document.getElementById("cart-items");
-
 let total=0;
-
 items.innerHTML="";
-
 cart.forEach(item=>{
-
 let li=document.createElement("li");
-
 li.textContent=item.name+" - ₹"+item.price;
-
 items.appendChild(li);
-
 total+=item.price;
-
 });
-
 document.getElementById("cart-total").textContent="Total: ₹"+total;
-
 }
-
 function checkout(){
-
 let message="Hello, I want to order:%0A";
-
-cart.forEach(item=>{
-message+=item.name+" - ₹"+item.price+"%0A";
-});
-
+cart.forEach(item=>{message+=item.name+" - ₹"+item.price+"%0A";});
 window.open("https://wa.me/918980962864?text="+message);
-
 }
 
+// Show Category Products
+function showCategory(category){
+let container = document.getElementById("product-container");
+container.innerHTML="";
+products[category].forEach(product=>{
+let card = document.createElement("div");
+card.className="product-card";
+card.innerHTML=`
+<div class="product-image">
+<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
+</div>
+<div class="product-info">
+<h3>${product.name}</h3>
+<p>₹${product.price}</p>
+<button onclick="addToCart('${product.name}',${product.price})">Add to Cart</button>
+</div>`;
+container.appendChild(card);
+});
+document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
 </script>
 
 </body>
 </html>
-```
