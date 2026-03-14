@@ -109,3 +109,12 @@ text-decoration:none;
 border-radius:4px;
 font-size:14px;
 }
+.insta-btn{
+display:inline-block;
+padding:12px 20px;
+background:#E1306C;
+color:white;
+text-decoration:none;
+border-radius:5px;
+margin-top:15px;
+}
