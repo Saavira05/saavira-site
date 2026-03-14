@@ -13,6 +13,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
+  <script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(product){
+
+cart.push(product);
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+updateCartCount();
+
+alert(product + " added to cart");
+
+}
+
+function updateCartCount(){
+
+let count = document.getElementById("cart-count");
+
+if(count){
+
+count.innerText = cart.length;
+
+}
+
+}
+
+updateCartCount();
+
+</script>
 <body>
 
 <header>
