@@ -70,23 +70,24 @@ updateCartCount();
 </section>
 
 
+```html
 <section class="section">
 
 <h2>Our Collections</h2>
 
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="showCategory('kurtis')">
 <h3>Kurtis</h3>
 <p>Cotton • Long • Short</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="showCategory('dresses')">
 <h3>Dresses</h3>
 <p>Elegant everyday dresses</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="showCategory('accessories')">
 <h3>Accessories</h3>
 <p>Jewellery & finishing touches</p>
 </div>
@@ -94,42 +95,111 @@ updateCartCount();
 </div>
 
 </section>
+```
 
 
-<section class="section">
+```html
+<section id="kurtis" class="products-section">
 
 <h2>Kurtis Collection</h2>
 
 <div class="products">
 
-<div class="product">Saavira Noor Kurti <span>Coming Soon</span></div>
-<div class="product">Saavira Pankhuri Kurti <span>Coming Soon</span></div>
-<div class="product">Saavira Prakriti Kurti <span>Coming Soon</span></div>
-<div class="product">Saavira Tarang Kurti <span>Coming Soon</span></div>
-<div class="product">Saavira Oorja Kurti <span>Coming Soon</span></div>
-<div class="product">Saavira Sugandha Kurti <span>Coming Soon</span></div>
-<div class="product">Saavira Sparsh Kurti <span>Coming Soon</span></div>
-<div class="product">Saavira Prerna Kurti <span>Coming Soon</span></div>
+<div class="product">
+<h4>Saavira Noor Kurti</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Noor Kurti')">Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Saavira Pankhuri Kurti</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Pankhuri Kurti')">Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Saavira Prakriti Kurti</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Prakriti Kurti')">Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Saavira Tarang Kurti</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Tarang Kurti')">Add to Cart</button>
+</div>
 
 </div>
 
 </section>
 
 
-<section class="section">
+
+<section id="dresses" class="products-section">
 
 <h2>Dresses</h2>
 
 <div class="products">
 
-<div class="product">Saavira Taaraana <span>Coming Soon</span></div>
-<div class="product">Saavira Mehal <span>Coming Soon</span></div>
-<div class="product">Saavira Rangoli <span>Coming Soon</span></div>
-<div class="product">Saavira Riwaayat <span>Coming Soon</span></div>
+<div class="product">
+<h4>Saavira Taaraana</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Taaraana')">Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Saavira Mehal</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Mehal')">Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Saavira Rangoli</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Rangoli')">Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Saavira Riwaayat</h4>
+<p>Coming Soon</p>
+<button onclick="addToCart('Saavira Riwaayat')">Add to Cart</button>
+</div>
 
 </div>
 
 </section>
+
+
+
+<section id="accessories" class="products-section">
+
+<h2>Accessories</h2>
+
+<div class="products">
+
+<div class="product">
+<h4>Rings</h4>
+<p>Coming Soon</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Earrings</h4>
+<p>Coming Soon</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<h4>Bracelets</h4>
+<p>Coming Soon</p>
+<button>Add to Cart</button>
+</div>
+
+</div>
+
+</section>
+```
+
 
 
 <section class="about">
