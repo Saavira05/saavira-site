@@ -1,431 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saavira – Your Everyday Style</title>
+
+<title>Saavira | Everyday Ethnic Wear</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Helvetica Neue', sans-serif;
+font-family:'Poppins', sans-serif;
 }
 
 body{
-background-image:url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
-background-color:#faf8f6;
-color:#222;
+background:#ffffff;
+color:#333;
 }
 
 /* NAVBAR */
+
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 8%;
-background:white;
 border-bottom:1px solid #eee;
-position:sticky;
-top:0;
-z-index:1000;
 }
-.logo img{
-height:95px;
+
+.logo{
+font-family:'Playfair Display', serif;
+font-size:28px;
+letter-spacing:2px;
 }
-.menu a{
-margin-left:25px;
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
 text-decoration:none;
 color:#333;
-font-weight:500;
-font-size:16px;
-}
-.cart-btn{
-margin-left:25px;
-background:black;
-color:white;
-border:none;
-padding:10px 16px;
-cursor:pointer;
+font-size:15px;
 }
 
 /* HERO */
+
 .hero{
-height:80vh;
-background-image:url("https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03");
-background-size:cover;
-background-position:center;
+height:70vh;
+background:url('https://images.unsplash.com/photo-1618354691373-d851c5c3a990') center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-animation:fadeHero 2s ease;
-}
-@keyframes fadeHero{
-0%{opacity:0; transform:scale(1.05);}
-100%{opacity:1; transform:scale(1);}
-}
-.hero img{
-width:350px;
-margin-bottom:20px;
-}
-.hero h1{
-font-size:52px;
-letter-spacing:3px;
-}
-.hero p{
-font-size:18px;
-margin-top:10px;
 }
 
-/* COLLECTION GRID */
-.collection-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
-.collection-card{
-background:white;
-padding:60px 20px;
-text-align:center;
-cursor:pointer;
-border-radius:10px;
-box-shadow:0 8px 20px rgba(0,0,0,0.06);
-transition:0.3s;
-}
-.collection-card:hover{
-transform:translateY(-6px);
-}
-.collection-card h3{
-font-size:24px;
+.hero h1{
+font-family:'Playfair Display', serif;
+font-size:48px;
 margin-bottom:10px;
 }
-.collection-card p{
-color:#777;
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+.btn{
+padding:12px 28px;
+background:#7A1E2C;
+color:white;
+text-decoration:none;
+border-radius:3px;
+}
+
+/* COLLECTIONS */
+
+.section{
+padding:80px 8%;
+text-align:center;
+}
+
+.section h2{
+font-family:'Playfair Display', serif;
+margin-bottom:40px;
+font-size:32px;
+}
+
+.collections{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#fafafa;
+padding:40px 20px;
+border:1px solid #eee;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+margin-bottom:10px;
+font-family:'Playfair Display', serif;
 }
 
 /* PRODUCTS */
+
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
-margin-top:40px;
-}
-.product-card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,0.06);
-transition:0.3s;
-}
-.product-card:hover{
-transform:translateY(-5px);
-}
-.product-image{
-height:280px;
-overflow:hidden;
-}
-.product-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:0.6s;
-}
-.product-card:hover img{
-transform:scale(1.1);
-}
-.product-info{
-padding:20px;
-text-align:center;
-}
-.product-info h3{
-margin-bottom:8px;
-}
-.product-info p{
-margin-bottom:10px;
-color:#666;
-}
-.product-info button{
-background:black;
-color:white;
-border:none;
-padding:10px 15px;
-cursor:pointer;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
 }
 
-/* CART PANEL */
-.cart{
-position:fixed;
-right:-350px;
-top:0;
-width:350px;
-height:100%;
-background:white;
-box-shadow:-5px 0 20px rgba(0,0,0,0.2);
-padding:20px;
-transition:0.4s;
-z-index:2000;
+.product{
+border:1px solid #eee;
+padding:15px;
 }
-.cart.open{
-right:0;
-}
-.cart h2{
-margin-bottom:20px;
-}
-.cart ul{
-list-style:none;
-margin-bottom:20px;
-}
-.cart li{
-margin-bottom:10px;
-}
-.cart-buttons{
-display:flex;
-gap:10px;
-flex-direction:column;
-}
-.checkout-btn{
-background:#25D366;
-color:white;
-border:none;
-padding:12px;
+
+.product img{
 width:100%;
-cursor:pointer;
 }
-.continue-btn{
-background:black;
-color:white;
-border:none;
-padding:12px;
-width:100%;
-cursor:pointer;
+
+.product h4{
+margin:10px 0;
 }
 
 /* ABOUT */
+
 .about{
-max-width:700px;
-margin:auto;
+background:#F7F1EB;
+padding:80px 15%;
 text-align:center;
-line-height:1.7;
+line-height:1.8;
 }
 
 /* INSTAGRAM */
-.instagram-grid{
+
+.instagram{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-}
-.instagram-grid div{
-background:#ddd;
-height:150px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:12px;
+gap:10px;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-font-size:20px;
+.instagram img{
+width:100%;
 }
 
 /* FOOTER */
+
 footer{
 background:#111;
 color:white;
 text-align:center;
-padding:40px;
+padding:40px 10%;
 margin-top:60px;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.logo img{height:70px;}
-.hero h1{font-size:36px;}
+footer p{
+margin-top:10px;
+font-size:14px;
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
-<div class="logo">
-<a href="#home"><img src="logo.png"></a>
-</div>
-<div class="menu">
-<a href="#home">Home</a>
-<a href="#collection">Collections</a>
-<a href="#about">About</a>
-<a href="#instagram">Instagram</a>
-<a href="#contact">Contact</a>
-<button class="cart-btn" onclick="toggleCart()">Cart</button>
-</div>
+<div class="logo">SAAVIRA</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Shop</a></li>
+<li><a href="#">Collections</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
 </nav>
 
-<section class="hero" id="home">
+<!-- HERO -->
+
+<section class="hero">
 <div>
-<img src="logo.png">
-<h1>Your Everyday Style</h1>
-<p>Elegant • Comfortable • Timeless</p>
+<h1>Effortless Everyday Ethnic Wear</h1>
+<p>Comfortable • Elegant • Timeless</p>
+<a href="#" class="btn">Shop Collection</a>
 </div>
 </section>
 
-<section id="collection">
-<h2 class="section-title">Collections</h2>
-<div class="collection-grid">
-<div class="collection-card" onclick="showCategory('kurtis')">
+<!-- COLLECTIONS -->
+
+<section class="section">
+
+<h2>Collections</h2>
+
+<div class="collections">
+
+<div class="card">
 <h3>Kurtis</h3>
 <p>Cotton • Long • Short</p>
 </div>
-<div class="collection-card" onclick="showCategory('dresses')">
+
+<div class="card">
 <h3>Dresses</h3>
 <p>Elegant everyday dresses</p>
 </div>
-<div class="collection-card" onclick="showCategory('accessories')">
+
+<div class="card">
 <h3>Accessories</h3>
 <p>Jewellery & finishing touches</p>
 </div>
+
 </div>
 </section>
 
-<section id="products">
-<h2 class="section-title">Products</h2>
-<div class="products" id="product-container"></div>
+<!-- PRODUCTS -->
+
+<section class="section">
+
+<h2>Featured Products</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03">
+<h4>Floral Cotton Kurti</h4>
+<p>₹1299</p>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1593032465171-2b2c11c8d5c2">
+<h4>Elegant Midi Dress</h4>
+<p>₹1799</p>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157">
+<h4>Printed Kurti</h4>
+<p>₹1499</p>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03">
+<h4>Traditional Earrings</h4>
+<p>₹599</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="about">
-<h2 class="section-title">About Saavira</h2>
-<div class="about">
-<p>Saavira was created with a simple idea: fashion should be effortless, comfortable, and elegant enough to be worn every day.</p>
-<p>Inspired by heritage and everyday moments, Saavira blends tradition with modern simplicity to create timeless ethnic wear.</p>
-</div>
+<!-- ABOUT -->
+
+<section class="about">
+
+<h2>About Saavira</h2>
+
+<p>
+Saavira was created with a simple idea: fashion should be effortless,
+comfortable, and elegant enough to be worn every day.
+</p>
+
+<p>
+Inspired by heritage and everyday moments, Saavira blends tradition
+with modern simplicity to create timeless ethnic wear.
+</p>
+
 </section>
 
-<section id="instagram">
-<h2 class="section-title">Instagram</h2>
-<div class="instagram-grid">
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
-<div>Coming Soon</div>
+<!-- INSTAGRAM -->
+
+<section class="section">
+
+<h2>Instagram</h2>
+
+<div class="instagram">
+
+<img src="https://images.unsplash.com/photo-1520975922284-9b7d1b1d9b9e">
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+<img src="https://images.unsplash.com/photo-1520974735194-23c9c5c91b63">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+
 </div>
+
 </section>
 
-<section id="contact">
-<h2 class="section-title">Contact</h2>
-<div class="about">
-<p>Email: Saavira.YourEverydayStyle@gmail.com</p>
-<p>WhatsApp: +91 8980962864</p>
-<p>Ahmedabad, India</p>
-</div>
-</section>
+<!-- FOOTER -->
 
 <footer>
-<p>© 2026 Saavira – Your Everyday Style</p>
+
+<h3>SAAVIRA</h3>
+
+<p>Effortless Everyday Ethnic Wear</p>
+
+<p>Email: Saavira.YourEverydayStyle@gmail.com</p>
+
+<p>© 2026 Saavira</p>
+
 </footer>
-
-<a class="whatsapp" href="https://wa.me/918980962864">💬</a>
-
-<!-- CART PANEL -->
-<div class="cart" id="cart">
-<h2>Your Cart</h2>
-<ul id="cart-items"></ul>
-<p id="cart-total"></p>
-<div class="cart-buttons">
-<button class="continue-btn" onclick="toggleCart()">Continue Shopping</button>
-<button class="checkout-btn" onclick="checkout()">Checkout</button>
-</div>
-</div>
-
-<script>
-// Products Data
-const products = {
-kurtis: [
-{name:"Saavira Noor Kurti", price:1899},
-{name:"Saavira Pankhuri Kurti", price:1799},
-{name:"Saavira Prakriti Kurti", price:1999},
-{name:"Saavira Tarang Kurti", price:1899},
-{name:"Saavira Oorja Kurti", price:1999},
-{name:"Saavira Sugandha Kurti", price:1899},
-{name:"Saavira Sparsh Kurti", price:1799},
-{name:"Saavira Prerna Kurti", price:1899}
-],
-dresses: [
-{name:"Saavira Taaraana", price:2499},
-{name:"Saavira Mehal", price:2699},
-{name:"Saavira Rangoli", price:2399},
-{name:"Saavira Riwaayat", price:2599}
-],
-accessories: [
-{name:"Earrings", price:499},
-{name:"Bracelet", price:699},
-{name:"Ring", price:399},
-{name:"Imitation Jewellery Set", price:999}
-]
-};
-
-// Cart
-let cart=[];
-function toggleCart(){document.getElementById("cart").classList.toggle("open");}
-function addToCart(name,price){
-cart.push({name,price});
-updateCart();
-toggleCart();
-}
-function updateCart(){
-let items=document.getElementById("cart-items");
-let total=0;
-items.innerHTML="";
-cart.forEach(item=>{
-let li=document.createElement("li");
-li.textContent=item.name+" - ₹"+item.price;
-items.appendChild(li);
-total+=item.price;
-});
-document.getElementById("cart-total").textContent="Total: ₹"+total;
-}
-function checkout(){
-let message="Hello, I want to order:%0A";
-cart.forEach(item=>{message+=item.name+" - ₹"+item.price+"%0A";});
-window.open("https://wa.me/918980962864?text="+message);
-}
-
-// Show Category Products
-function showCategory(category){
-let container = document.getElementById("product-container");
-container.innerHTML="";
-products[category].forEach(product=>{
-let card = document.createElement("div");
-card.className="product-card";
-card.innerHTML=`
-<div class="product-image">
-<img src="https://via.placeholder.com/400x500?text=Coming+Soon">
-</div>
-<div class="product-info">
-<h3>${product.name}</h3>
-<p>₹${product.price}</p>
-<button onclick="addToCart('${product.name}',${product.price})">Add to Cart</button>
-</div>`;
-container.appendChild(card);
-});
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-}
-</script>
 
 </body>
 </html>
